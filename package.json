@@ -2,7 +2,7 @@
   "name": "pm2_utils",
   "version": "1.0.0",
   "description": "",
-  "main": "index.js",
+  "main": "pm2-list.js",
   "keywords": [],
   "author": "",
   "license": "ISC",
