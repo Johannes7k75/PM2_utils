@@ -38,7 +38,7 @@ async function jsonMapToTable() {
     const isOnline = process.pm2_env.status === "online";
     const color = isOnline ? colors.online : colors.offline;
 
-    const tableRow = [colors.header(process.pm_id), process.name, process.pid, isOnline ? formatDuration(new Date(Date.now() - process.pm2_env.pm_uptime)) : 0, process.pm2_env.restart_time, color(process.pm2_env.status)];
+    const tableRow = [colors.header(process.pm_id), process.name, process.pid?? "N/A", isOnline ? formatDuration(new Date(Date.now() - process.pm2_env.pm_uptime)) : 0, process.pm2_env.restart_time, color(process.pm2_env.status)];
 
     if (usePerformance) {
       tableRow.push(`${process.monit.cpu.toFixed()}%`, process.monit.memory <= 0 ? "0b" : `${bytesToMB(process.monit.memory)}mb`);
